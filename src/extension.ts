@@ -61,8 +61,8 @@ export function activate(context: vscode.ExtensionContext) {
 					parameterReplaceIndex++;
 				}
 			}
-			
-			vscode.window.showInformationMessage(queryString);
+			vscode.env.clipboard.writeText(queryString);
+			vscode.window.showInformationMessage("SQL 解析成功，已放入系统剪贴板中，请粘贴到编辑器中。");
 		}
 	});
 	context.subscriptions.push(disposable);
